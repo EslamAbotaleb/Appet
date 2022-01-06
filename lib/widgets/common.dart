@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:appet/helpers/color_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:logger/logger.dart';
@@ -65,7 +66,18 @@ Future<bool> isPermissionsGranted() async {
     return false;
   }
 }
-
+BoxDecoration InputBoxDecoration() {
+  return   BoxDecoration(
+                  border: Border.all(color: ColorUtils.appColor, width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                        color: ColorUtils.appColor,
+                        blurRadius: 10,
+                        offset: Offset(1, 1)),
+                  ],
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(Radius.circular(20)));
+}
 showToast(String message, bool isSuccess) {
   Fluttertoast.showToast(
       msg: message,

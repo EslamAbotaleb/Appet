@@ -42,10 +42,10 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
           width: MediaQuery.of(context).size.width,
           child: ListView(
             children: <Widget>[
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Container(
                 height: MediaQuery.of(context).size.height / 3,
-                child: FlareActor(
+                child: const FlareActor(
                   "assets/otp.flr",
                   animation: "otp",
                   fit: BoxFit.fitHeight,

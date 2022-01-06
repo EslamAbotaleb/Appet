@@ -9,5 +9,9 @@
     "resend": " إعادة الإرسال",
     "verify": "تحقق",
     "Clear": "مسح",
-    "AddPinCode": "إضافة رقم تحقق الرمز"
+    "AddPinCode": "إضافة رقم تحقق الرمز",
+    "firstname": "الاسم الاول",
+    "lastname": "اسم العائلة",
+    "register": "تسجيل"
+
 }

@@ -9,8 +9,10 @@
     "resend": " RESEND",
     "verify": "VERIFY",
     "Clear": "Clear",
-    "AddPinCode": "Add Pin Code "
+    "AddPinCode": "Add Pin Code ",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "register": "register"
 
-
-      
+ 
 }

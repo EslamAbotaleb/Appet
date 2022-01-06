@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:appet/helpers/app_localizations.dart';
 import 'package:appet/helpers/color_utils.dart';
+import 'package:appet/screens/profile/complete_profile_Screen.dart';
+import 'package:appet/widgets/common.dart';
 import 'package:appet/widgets/text_button_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -96,6 +98,7 @@ var onTapRecognizer;
                           Text(AppLocalizations.of(context)!.translate('verify')),
                       duration: Duration(seconds: 2),
                     ));
+                    widget.phoneNumberController?.clear();
                   });
                 }
               },
@@ -137,7 +140,7 @@ text: AppLocalizations.of(context)!.translate('Clear'),
                     
                   text:  AppLocalizations.of(context)!.translate('AddPinCode'),
                     onPressed: () {
-
+                          openScreen(context, CompleteProfileScreen());
                       setState(() {
                         widget.phoneNumberController?.text = "123456";
                       });
@@ -155,5 +158,5 @@ text: AppLocalizations.of(context)!.translate('Clear'),
     super.dispose();
       widget.phoneNumberController?.clear();
   }
-  
+
 }
