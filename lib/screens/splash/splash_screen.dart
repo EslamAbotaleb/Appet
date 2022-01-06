@@ -1,10 +1,6 @@
 import 'package:appet/helpers/color_utils.dart';
-import 'package:appet/helpers/preferences_manager.dart';
 import 'package:appet/screens/authentication/veritfcation/vertification_code_screen.dart';
-import 'package:appet/screens/home/home_screen.dart';
-import 'package:appet/widgets/common.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
 
 import '../../main.dart';
@@ -22,12 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   }
 
-  _openScreen() async {
 
-    Future.delayed(const Duration(seconds: 1), () {
-     pushScreen(context, VertificationPinCodeScreen());
-    });
-  }
   @override
   Widget build(BuildContext context) {
     /// Normal Logo Splash screen
