@@ -1,0 +1,16 @@
+{
+    "appet": "Appet",
+    "VerificationCode": "Verification Code",
+    "Login": "Login with phone number",
+    "PhoneNumberVerification": "Phone Number Verification",
+    "enterpincode": "Enter the code sent to ",
+    "fillproperly":  "*Please fill up all the cells properly",
+    "notreceivepin": "Didn't receive the code? ",
+    "resend": " RESEND",
+    "verify": "VERIFY",
+    "Clear": "Clear",
+    "AddPinCode": "Add Pin Code "
+
+
+      
+}
