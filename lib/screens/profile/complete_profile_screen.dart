@@ -49,12 +49,12 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
   Widget build(BuildContext context) {
     return ScaffoldWidget(
       ScrollViewWidget(
-          child: Flexible(
-      
-        child: 
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child:  Column(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+              child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
@@ -104,12 +104,12 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 Align(
                   alignment: Alignment.center,
                   child: CircleAvatar(
-                    radius: 90,
+                    radius: 55,
                     // backgroundColor: Color(0xff476cfb),
                     child: ClipOval(
                       child: new SizedBox(
-                          width: 180.0,
-                          height: 180.0,
+                          width: 140.0,
+                          height: 140.0,
                           child: (_image != null)
                               ? Image.file(
                                   _image!,
@@ -119,12 +119,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20.0),
                 Padding(
                   padding: EdgeInsets.only(top: 60.0),
                   child: IconButton(
                     icon: Icon(
                       FontAwesomeIcons.camera,
-                      size: 30.0,
+                      size: 20.0,
                     ),
                     onPressed: () {
                       getImage(context);
@@ -134,43 +135,42 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               ],
             ),
             getGenderWidget(false, false),
-
-           Container(
-          margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
-          child: ButtonTheme(
-            height: 50,
-            child: FlatButton(
-              onPressed: () {
-              
-              },
-              child: Center(
-                  child: Text(
-                AppLocalizations.of(context)!.translate('register'),
-                style: TextStyle(
-                    color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-              )),
+            Container(
+              margin:
+                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
+              child: ButtonTheme(
+                height: 50,
+                child: FlatButton(
+                  onPressed: () {},
+                  child: Center(
+                      child: Text(
+                    AppLocalizations.of(context)!.translate('register'),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  )),
+                ),
+              ),
+              decoration: BoxDecoration(
+                  color: ColorUtils.appColor,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                        color: ColorUtils.appColor,
+                        offset: Offset(1, -2),
+                        blurRadius: 5),
+                    BoxShadow(
+                        color: ColorUtils.appColor,
+                        offset: Offset(-1, 2),
+                        blurRadius: 5)
+                  ]),
             ),
-          ),
-          decoration: BoxDecoration(
-              color: ColorUtils.appColor,
-              borderRadius: BorderRadius.circular(5),
-              boxShadow: [
-                BoxShadow(
-                    color: ColorUtils.appColor,
-                    offset: Offset(1, -2),
-                    blurRadius: 5),
-                BoxShadow(
-                    color: ColorUtils.appColor,
-                    offset: Offset(-1, 2),
-                    blurRadius: 5)
-              ]),
-        ),
           ],
         ),
-        )
-       
-      )),
+      ))),
       icon: 'iconBack',
+      title: AppLocalizations.of(context)!.translate('completeprofile'),
     );
   }
 

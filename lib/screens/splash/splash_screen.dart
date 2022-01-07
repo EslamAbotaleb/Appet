@@ -1,4 +1,6 @@
 import 'package:appet/helpers/color_utils.dart';
+import 'package:appet/screens/authentication/veritfcation/vertification_code_screen.dart';
+import 'package:appet/screens/home/content_bottombar.dart';
 import 'package:appet/screens/profile/complete_profile_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_screen_view/SplashScreenView.dart';
@@ -18,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SplashScreenView(
-        navigateRoute:CompleteProfileScreen(),
+        navigateRoute: ContentBottomBarWidget(),
         // VertificationPinCodeScreen(),
        
         duration: 3500,

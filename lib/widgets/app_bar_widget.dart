@@ -1,3 +1,4 @@
+import 'package:appet/helpers/color_utils.dart';
 import 'package:flutter/material.dart';
 import '../text_style_widget.dart';
 import 'common.dart';
@@ -21,34 +22,34 @@ class AppBarWidget {
     return PreferredSize(
       preferredSize: Size.fromHeight(45),
       // here the desired height
-      child: Padding(
-        padding: EdgeInsets.only(top: 0),
-        child: AppBar(
-          backgroundColor:  Colors.white,
-          centerTitle: true,
-          title:  Text(
-                title,
-                style: TextStyleWidget.build(
-                  isArabicLang(context),
-              
-                  fontSize: 18,
-                  fontWeight: FontWeight.w300,
-                ),
+      child: AppBar(
+        backgroundColor:  Colors.white,
+        centerTitle: true,
+        title:  Text(
+              title,
+              style: TextStyleWidget.build(
+                isArabicLang(context),
+              color: ColorUtils.appColor,
+                fontSize: 18,
+                fontWeight: FontWeight.w300,
               ),
-          elevation: 0,
-          bottomOpacity: 0,
-         
-          leading: icon == 'iconBack'
-              ? IconButton(
+            ),
+        elevation: 0,
+        bottomOpacity: 0,
+       
+        leading: icon == 'iconBack'
+            ? Padding(
+              padding: const EdgeInsets.all(7.0),
+              child: IconButton(
                 icon: Icon(
                   Icons.arrow_back_ios,
                   color:Colors.black
                       ,
                 ),
                 onPressed: _previousScreen,
-              )
-              : Container(),
-        ),
+              ),
+            )
+            : Container(),
       ),
     );
   }

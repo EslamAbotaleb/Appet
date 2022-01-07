@@ -12,6 +12,12 @@
     "AddPinCode": "إضافة رقم تحقق الرمز",
     "firstname": "الاسم الاول",
     "lastname": "اسم العائلة",
-    "register": "تسجيل"
+    "register": "تسجيل",
+    "completeprofile": "اكمال تسجيل الملف",
+    "clinic": "العيادة",
+    "pets": "حيوانات أليفة",
+    "adoption": "التبني",
+    "account": "الحساب"
+
 
 }

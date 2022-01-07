@@ -57,11 +57,11 @@ class CircleImageWidget extends StatelessWidget {
                     // Image(image: AssetImage(placeholder), fit: fit),
                     Image(
                         image: const NetworkImage(
-                            'https://c1.alamy.com/thumbs/2c80ydc/user-profile-grey-icon-web-avatar-employee-symbol-2c80ydc.jpg'),
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboPtDCICzIEAkxJhRoqbdHbje3CRhIdYKrrnkjxw8howjenkw9Ig4Vgw5hb9Gu5DZ6z8&usqp=CAU'),
                         fit: fit),
                 errorWidget: (context, url, _) => Image(
                     image: NetworkImage(
-                        'https://c1.alamy.com/thumbs/2c80ydc/user-profile-grey-icon-web-avatar-employee-symbol-2c80ydc.jpg'),
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboPtDCICzIEAkxJhRoqbdHbje3CRhIdYKrrnkjxw8howjenkw9Ig4Vgw5hb9Gu5DZ6z8&usqp=CAU'),
                     fit: fit),
                 imageBuilder: (ctx, imageProvider) => Image(
                   image: imageProvider,
@@ -78,7 +78,7 @@ class CircleImageWidget extends StatelessWidget {
                     ? Image.file(imageFile!, fit: fit)
                     : Image(
                         image: NetworkImage(
-                            'https://c1.alamy.com/thumbs/2c80ydc/user-profile-grey-icon-web-avatar-employee-symbol-2c80ydc.jpg'),
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTboPtDCICzIEAkxJhRoqbdHbje3CRhIdYKrrnkjxw8howjenkw9Ig4Vgw5hb9Gu5DZ6z8&usqp=CAU'),
                         fit: fit),
       ),
     );

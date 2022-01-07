@@ -12,7 +12,13 @@
     "AddPinCode": "Add Pin Code ",
     "firstname": "First name",
     "lastname": "Last name",
-    "register": "register"
+    "register": "register",
+    "completeprofile": "Complete your profile",
+    "clinic": "Clinic",
+    "pets": "Pets",
+    "adoption": "Adoption",
+    "account": "Account"
+
 
  
 }
