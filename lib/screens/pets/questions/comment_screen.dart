@@ -1,4 +1,7 @@
+import 'package:appet/screens/pets/questions/reply_comment_widget.dart';
 import 'package:appet/widgets/comment_box_widget.dart';
+import 'package:appet/widgets/common.dart';
+import 'package:appet/widgets/text_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class CommentsPage extends StatefulWidget {
@@ -59,21 +62,43 @@ class _CommentsPageState extends State<CommentsPage> {
                 data[i]['name'],
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(data[i]['message']),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(data[i]['message']),
+                  ),
+                            Container(width: MediaQuery.of(context).size.width, height: 35, child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextButtonWidget(text: 'Like',onPressed: () {
+
+                              },),
+                                TextButtonWidget(text: 'View replies',onPressed: () {
+                                          showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        backgroundColor: Colors.white,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(40.0), topRight: Radius.circular(40.0)),
+        ),
+        builder: (context) =>  ReplayOnCommentWidget());
+                              },),
+                            ],
+                            ),),
+
+                ],
+              ),
             ),
-          )
+          ),
       ],
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Comment Page"),
-        backgroundColor: Colors.pink,
-      ),
-      body: Container(
+    return Container(
         child: CommentBox(
           userImage:
               "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
@@ -105,7 +130,7 @@ class _CommentsPageState extends State<CommentsPage> {
           textColor: Colors.white,
           sendWidget: Icon(Icons.send_sharp, size: 30, color: Colors.white),
         ),
-      ),
+     
     );
   }
 }

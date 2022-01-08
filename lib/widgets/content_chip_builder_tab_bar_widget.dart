@@ -23,7 +23,7 @@ class ChipTabBarBuilder extends ChipBuilder {
           child: Align(
             alignment: Alignment.topRight,
             child: Container(
-                margin: EdgeInsets.only(bottom:  10 ),
+                margin: EdgeInsets.only(bottom:  2 ),
                 padding: EdgeInsets.only(left: 4, right: 4),
                 child: index == 0
                     ? 
