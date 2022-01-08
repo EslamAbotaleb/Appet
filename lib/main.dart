@@ -1,5 +1,6 @@
 import 'package:appet/providers/lang/app_language.dart';
 import 'package:appet/screens/splash/splash_screen.dart';
+import 'package:appet/widgets/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +33,7 @@ class _MyAppState extends State<MyApp>  with WidgetsBindingObserver{
   void initState() {
     // TODO: implement initState
     super.initState();
+    isConnectedToNetwork();
         WidgetsBinding.instance?.addObserver(this);
 
   }

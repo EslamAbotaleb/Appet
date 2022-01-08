@@ -20,8 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SplashScreenView(
-        navigateRoute: ContentBottomBarWidget(),
-        // VertificationPinCodeScreen(),
+        navigateRoute: VertificationPinCodeScreen(),
        
         duration: 3500,
         imageSize: 130,

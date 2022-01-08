@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:appet/helpers/app_localizations.dart';
 import 'package:appet/helpers/color_utils.dart';
+import 'package:appet/screens/home/content_bottombar.dart';
 import 'package:appet/widgets/circle_image_widget.dart';
 import 'package:appet/widgets/common.dart';
 import 'package:appet/widgets/scaffold_Widget.dart';
@@ -31,7 +32,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
   final ImagePicker picker = ImagePicker();
 
   Future getImage(BuildContext context) async {
-    if (!(await _isPermissionsGranted())) {
+    if (!(await isPermissionsGranted())) {
       showToast('Access Camera', false);
       return;
     }
@@ -105,7 +106,6 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   alignment: Alignment.center,
                   child: CircleAvatar(
                     radius: 55,
-                    // backgroundColor: Color(0xff476cfb),
                     child: ClipOval(
                       child: new SizedBox(
                           width: 140.0,
@@ -141,7 +141,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               child: ButtonTheme(
                 height: 50,
                 child: FlatButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    pushScreen(context, ContentBottomBarWidget());
+                  },
                   child: Center(
                       child: Text(
                     AppLocalizations.of(context)!.translate('register'),
@@ -174,15 +176,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
     );
   }
 
-  Future<bool> _isPermissionsGranted() async {
-    final Map<Permission, PermissionStatus> statuses = await [
-      Permission.camera,
-      // Permission.microphone,
-    ].request();
-
-    return statuses.values.where((element) => element.isDenied).isEmpty;
-  }
-
+  
   Widget getGenderWidget(bool showOtherGender, bool alignVertical) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 40),

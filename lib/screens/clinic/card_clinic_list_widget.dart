@@ -2,7 +2,10 @@
 
 import 'package:appet/models/clinics.dart';
 import 'package:appet/widgets/circle_image_widget.dart';
+import 'package:appet/widgets/common.dart';
 import 'package:flutter/material.dart';
+
+import 'details/detail_clinic_select_screen.dart';
 
 class CardClinicWidget extends StatelessWidget {
 
@@ -89,18 +92,23 @@ class CardClinicWidget extends StatelessWidget {
     );
 
 
-    return new Container(
-      height: 120.0,
-      margin: const EdgeInsets.symmetric(
-        vertical: 16.0,
-        horizontal: 24.0,
+    return InkWell(
+      onTap: () {
+        openScreen(context, DetailClinicWidget());
+      },
+      child: new Container(
+        height: 120.0,
+        margin: const EdgeInsets.symmetric(
+          vertical: 16.0,
+          horizontal: 24.0,
+        ),
+        child: new Stack(
+          children: <Widget>[
+            clinicCard,
+            clinicThumbnail,
+          ],
+        )
       ),
-      child: new Stack(
-        children: <Widget>[
-          clinicCard,
-          clinicThumbnail,
-        ],
-      )
     );
   }
 }

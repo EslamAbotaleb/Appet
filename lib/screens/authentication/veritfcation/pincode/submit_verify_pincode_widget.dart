@@ -86,8 +86,11 @@ class _VerifyPinCodeWidgetState extends State<VerifyPinCodeWidget> {
           margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 30),
           child: ButtonTheme(
             height: 50,
-            child: FlatButton(
+            child: TextButtonWidget(
+              color: Colors.white,
+              text: AppLocalizations.of(context)!.translate('verify'),
               onPressed: () {
+                /*
                 widget.formKey?.currentState?.validate();
                 // conditions for validating
                 if (widget.currentText?.length != 6 ||
@@ -109,15 +112,9 @@ class _VerifyPinCodeWidgetState extends State<VerifyPinCodeWidget> {
                     widget.phoneNumberController?.clear();
                   });
                 }
+                */
+                pushScreen(context, CompleteProfileScreen());
               },
-              child: Center(
-                  child: Text(
-                AppLocalizations.of(context)!.translate('verify'),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              )),
             ),
           ),
           decoration: BoxDecoration(
@@ -126,11 +123,11 @@ class _VerifyPinCodeWidgetState extends State<VerifyPinCodeWidget> {
               boxShadow: [
                 BoxShadow(
                     color: ColorUtils.appColor,
-                    offset: Offset(1, -2),
+                    offset: Offset(1, 1),
                     blurRadius: 5),
                 BoxShadow(
                     color: ColorUtils.appColor,
-                    offset: Offset(-1, 2),
+                    offset: Offset(1, 2),
                     blurRadius: 5)
               ]),
         ),
@@ -141,12 +138,14 @@ class _VerifyPinCodeWidgetState extends State<VerifyPinCodeWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextButtonWidget(
+              color: Color(0xff34a8be),
               text: AppLocalizations.of(context)!.translate('Clear'),
               onPressed: () {
                 widget.phoneNumberController?.clear();
               },
             ),
             TextButtonWidget(
+              color: Color(0xff34a8be),
               text: AppLocalizations.of(context)!.translate('AddPinCode'),
               onPressed: () {
                 openScreen(context, CompleteProfileScreen());

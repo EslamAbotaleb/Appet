@@ -1,4 +1,6 @@
-class Clinic {
+import 'package:appet/widgets/drop_down_title.dart';
+
+class Clinic implements DropDownItem  {
   final String? id;
   final String? name;
   final String? location;
@@ -9,6 +11,12 @@ class Clinic {
 
   const Clinic({this.id, this.name, this.location, this.distance, this.gravity,
     this.description, this.image});
+
+  @override
+  String getDropDownItemText(bool isArabicLang) {
+      return (name) ?? "";
+
+  }
 }
 
 List<Clinic> clinics = [

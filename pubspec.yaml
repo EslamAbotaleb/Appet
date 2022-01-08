@@ -53,7 +53,9 @@ dependencies:
   convex_bottom_bar: ^3.0.0
   location: ^4.3.0
   geolocator: ^8.0.1
+  google_fonts: ^2.0.0
   geocoding: 
+  flutter_toggle_tab:
 
 dev_dependencies:
   flutter_test:

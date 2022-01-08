@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:appet/helpers/color_utils.dart';
-import 'package:appet/screens/authentication/veritfcation/pincode/verify_pincode_widget.dart';
+import 'package:appet/screens/authentication/veritfcation/pincode/submit_verify_pincode_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';

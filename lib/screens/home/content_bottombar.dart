@@ -1,5 +1,8 @@
 import 'package:appet/helpers/app_localizations.dart';
 import 'package:appet/helpers/color_utils.dart';
+import 'package:appet/screens/clinic/clinic_widget.dart';
+import 'package:appet/screens/pets/pets_screen.dart';
+import 'package:appet/screens/pets/questions/comment_screen.dart';
 import 'package:appet/widgets/common.dart';
 import 'package:appet/widgets/content_chip_builder_tab_bar_widget.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -8,8 +11,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:location/location.dart';
 import 'package:geolocator_platform_interface/src/enums/location_accuracy.dart'
     as accuracy;
-
-import 'clinic/clinic_widget.dart';
 
 class ContentBottomBarWidget extends StatefulWidget {
   ContentBottomBarWidget({Key? key}) : super(key: key);
@@ -28,7 +29,8 @@ class _ContentBottomBarWidgetState extends State<ContentBottomBarWidget> {
 
   final _pageOptions = [
     ClinicWidget(),
-    Container(width: 150, height: 150, color: Colors.yellow),
+  //  PetsWidget(),
+  CommentsPage(),
     Container(width: 150, height: 150, color: Colors.grey),
     Container(width: 150, height: 150, color: Colors.blue),
   ];
@@ -119,8 +121,7 @@ class _ContentBottomBarWidgetState extends State<ContentBottomBarWidget> {
       setState(() {
         _currentPosition = position;
       });
-      logger.d(_currentPosition?.altitude);
-      // _getAddressFromLatLng();
+      // logger.d(_currentPosition?.altitude);
     }).catchError((e) {
       print(e);
     });

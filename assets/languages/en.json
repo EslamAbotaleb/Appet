@@ -17,7 +17,20 @@
     "clinic": "Clinic",
     "pets": "Pets",
     "adoption": "Adoption",
-    "account": "Account"
+    "account": "Account",
+    "addpets": "Add New Pet",
+    "newpet": "New Pet",
+    "name": "Name",
+    "tag": "Tag",
+    "type": "Type",
+    "color": "Color",
+    "breed": "breed",
+    "married": "Married",
+    "requestpassport": "Request passport",
+    "question": "Questions",
+    "submit": "Submit"
+
+
 
 
  

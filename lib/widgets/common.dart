@@ -15,6 +15,14 @@ Logger logger = Logger(
     colors: false,
   ),
 );
+Future<bool> isPermissionsGranted() async {
+    final Map<Permission, PermissionStatus> statuses = await [
+      Permission.camera,
+      // Permission.microphone,
+    ].request();
+
+    return statuses.values.where((element) => element.isDenied).isEmpty;
+  }
 
 getLanguage(BuildContext context) {
   return Localizations?.localeOf(context).languageCode;
@@ -59,20 +67,14 @@ bool validateEmail(String value) {
   return regex.hasMatch(value);
 }
 
-Future<bool> isPermissionsGranted() async {
-  if (await Permission.storage.request().isGranted) {
-    return true;
-  } else {
-    return false;
-  }
-}
+
 BoxDecoration InputBoxDecoration() {
   return   BoxDecoration(
                   border: Border.all(color: ColorUtils.appColor, width: 1),
                   boxShadow: [
                     BoxShadow(
                         color: ColorUtils.appColor,
-                        blurRadius: 10,
+                        blurRadius: 8,
                         offset: Offset(1, 1)),
                   ],
                   color: Colors.white,
