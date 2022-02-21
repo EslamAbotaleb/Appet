@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     /// Normal Logo Splash screen
-   
+  
     return Scaffold(
   
       body: SplashScreenView(

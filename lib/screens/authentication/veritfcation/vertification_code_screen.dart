@@ -4,7 +4,6 @@ import 'package:appet/helpers/fade_animation.dart';
 import 'package:appet/screens/authentication/veritfcation/phonenumber_widget.dart';
 import 'package:appet/text_style_widget.dart';
 import 'package:appet/widgets/common.dart';
-import 'package:appet/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'insert_pincode.dart';

@@ -1,6 +1,9 @@
 import 'package:appet/helpers/color_utils.dart';
+import 'package:appet/text_style_widget.dart';
 import 'package:appet/widgets/text_field_widget.dart';
+import 'package:appet/widgets/tinder_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class PhoneWidget extends StatefulWidget {
   @override
@@ -13,6 +16,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
 
   @override
   Widget build(BuildContext context) {
+
     var countryDropDown = Container(
       height: 30.0,
       child: DropdownButtonHideUnderline(
@@ -37,14 +41,43 @@ class _PhoneWidgetState extends State<PhoneWidget> {
         ),
       ),
     );
-    return Container(
-        width: double.infinity,
+
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 30.0, top: 10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "My  number is",
+                  style: TextStyleWidget.build(false,
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+
+                Container(
+        width: MediaQuery.of(context).size.width - 50,
+        margin: EdgeInsets.symmetric(vertical: 15,),
         decoration: BoxDecoration(
-            border: Border.all(color: ColorUtils.appColor, width: 1),
+            border: Border.all(color: ColorUtils.appColor, width: 0.2),
             boxShadow: [
               BoxShadow(
-                  color: ColorUtils.appColor,
-                  blurRadius: 10,
+                  color: Colors.transparent,
+                  blurRadius: 0,
                   offset: Offset(1, 1)),
             ],
             color: Colors.white,
@@ -52,10 +85,121 @@ class _PhoneWidgetState extends State<PhoneWidget> {
         child: TextFieldWidget(
           TextEditingController(),
           prefixIcon: countryDropDown,
-          hint: 'Phone Number',
+          hint: '',
           colorText: Colors.black,
           textInputType: TextInputType.number,
           validation: (_) {},
-        ));
+        )),
+
+             Container(
+              width: MediaQuery.of(context).size.width - 100,
+              margin: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+              height: 50,
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 0.0),
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white),
+              child: ElevatedButton(
+                child: Text("Next", style: TextStyleWidget.build(false, color: Colors.black)),
+                 style: ButtonStyle(
+        elevation: MaterialStateProperty.all(2),
+        overlayColor: MaterialStateProperty.all(Colors.black12),
+        shadowColor: MaterialStateProperty.all(Colors.pink.shade50),
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        fixedSize: MaterialStateProperty.all(const Size(412, 60)),
+      ),
+                onPressed: () {},
+              ),
+            ),
+                  const SizedBox(
+                            height: 20,
+                          ),
+                          //Botão 
+            Center(child: Text('OR', style: TextStyleWidget.build(false,fontSize: 13, color: Colors.black),)),
+             
+               const SizedBox(
+                            height: 20,
+                          ),
+                          //Botão google
+
+                          Padding(
+                            padding: const EdgeInsets.only(right: 28.0, top: 25.0),
+                            child: const TinderButton(
+                              texto: 'LOG IN WITH GOOGLE',
+                              imagem: AssetImage('assets/images/google.png'),
+                              cor: Colors.black87,
+                            ),
+                          ),
+
+                          //Espaçador
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 28.0, top: 10.0),
+                            child: TinderButton(
+                                texto: 'LOG IN WITH FACEBOOK',
+                                imagem: const AssetImage(
+                                    'assets/images/facebook.png'),
+                                cor: Colors.blue.shade500),
+                          ),
+                          //Espaçador
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          //Botão número
+                       
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+    // var countryDropDown = Container(
+    //   height: 30.0,
+    //   child: DropdownButtonHideUnderline(
+    //     child: ButtonTheme(
+    //       alignedDropdown: true,
+    //       child: DropdownButton(
+    //         value: _selectedCountryCode,
+    //         items: _countryCodes?.map((String? value) {
+    //           return new DropdownMenuItem<String>(
+    //               value: value,
+    //               child: new Text(
+    //                 value!,
+    //                 style: TextStyle(fontSize: 12.0),
+    //               ));
+    //         }).toList(),
+    //         onChanged: (String? value) {
+    //           setState(() {
+    //             _selectedCountryCode = value;
+    //           });
+    //         },
+    //       ),
+    //     ),
+    //   ),
+    // );
+    // return Container(
+    //     width: double.infinity,
+    //     decoration: BoxDecoration(
+    //         border: Border.all(color: ColorUtils.appColor, width: 1),
+    //         boxShadow: [
+    //           BoxShadow(
+    //               color: ColorUtils.appColor,
+    //               blurRadius: 10,
+    //               offset: Offset(1, 1)),
+    //         ],
+    //         color: Colors.white,
+    //         borderRadius: const BorderRadius.all(Radius.circular(20))),
+    //     child: TextFieldWidget(
+    //       TextEditingController(),
+    //       prefixIcon: countryDropDown,
+    //       hint: 'Phone Number',
+    //       colorText: Colors.black,
+    //       textInputType: TextInputType.number,
+    //       validation: (_) {},
+    //     ));
   }
 }

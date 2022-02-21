@@ -1,4 +1,5 @@
 import 'package:appet/helpers/color_utils.dart';
+import 'package:appet/screens/authentication/veritfcation/phonenumber_widget.dart';
 import 'package:appet/text_style_widget.dart';
 import 'package:appet/widgets/common.dart';
 import 'package:appet/widgets/login_button_widget.dart';
@@ -82,25 +83,14 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
               ),
             ),
             SizedBox(height: 60),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
-              height: 50,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 0.0),
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white),
-              child: TextButton(
-                child: Text("CREATE ACCOUNT"),
-                style: TextButton.styleFrom(
-                  primary: Colors.black,
-                ),
-                onPressed: () {},
+        
+            InkWell(
+              onTap: () {
+                openScreen(context, PhoneWidget());
+              },
+              child: StyleButtonWidget(
+                text: 'SIGN IN',
               ),
-            ),
-            
-            StyleButtonWidget(
-              text: 'SIGN IN',
             ),
           ],
         ),
