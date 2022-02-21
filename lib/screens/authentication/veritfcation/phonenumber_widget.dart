@@ -11,12 +11,12 @@ class PhoneWidget extends StatefulWidget {
 }
 
 class _PhoneWidgetState extends State<PhoneWidget> {
+  TextEditingController phoneNumberController = TextEditingController();
   String? _selectedCountryCode;
-  List<String>? _countryCodes = ['+91', '+23'];
-
+  String? phoneNumber = "";
+  List<String>? _countryCodes = ['+91', '+20'];
   @override
   Widget build(BuildContext context) {
-
     var countryDropDown = Container(
       height: 30.0,
       child: DropdownButtonHideUnderline(
@@ -42,7 +42,6 @@ class _PhoneWidgetState extends State<PhoneWidget> {
       ),
     );
 
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -62,7 +61,7 @@ class _PhoneWidgetState extends State<PhoneWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "My  number is",
+                  "My number is",
                   style: TextStyleWidget.build(false,
                       fontSize: 20,
                       color: Colors.black,
@@ -70,87 +69,102 @@ class _PhoneWidgetState extends State<PhoneWidget> {
                 ),
 
                 Container(
-        width: MediaQuery.of(context).size.width - 50,
-        margin: EdgeInsets.symmetric(vertical: 15,),
-        decoration: BoxDecoration(
-            border: Border.all(color: ColorUtils.appColor, width: 0.2),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.transparent,
-                  blurRadius: 0,
-                  offset: Offset(1, 1)),
-            ],
-            color: Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
-        child: TextFieldWidget(
-          TextEditingController(),
-          prefixIcon: countryDropDown,
-          hint: '',
-          colorText: Colors.black,
-          textInputType: TextInputType.number,
-          validation: (_) {},
-        )),
+                    width: MediaQuery.of(context).size.width - 50,
+                    margin: EdgeInsets.symmetric(
+                      vertical: 15,
+                    ),
+                    decoration: BoxDecoration(
+                        border:
+                            Border.all(color: ColorUtils.appColor, width: 0.2),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.transparent,
+                              blurRadius: 0,
+                              offset: Offset(1, 1)),
+                        ],
+                        color: Colors.white,
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20))),
+                    child: TextFieldWidget(
+                      phoneNumberController,
+                      prefixIcon: countryDropDown,
+                      hint: '',
+                      colorText: Colors.black,
+                      textInputType: TextInputType.number,
+                      validation: (_) {},
+                      onChanged: (value) {
+                        setState(() {
+                          phoneNumber = value;
+                        });
+                      },
+                    )),
 
-             Container(
-              width: MediaQuery.of(context).size.width - 100,
-              margin: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-              height: 50,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 0.0),
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.white),
-              child: ElevatedButton(
-                child: Text("Next", style: TextStyleWidget.build(false, color: Colors.black)),
-                 style: ButtonStyle(
-        elevation: MaterialStateProperty.all(2),
-        overlayColor: MaterialStateProperty.all(Colors.black12),
-        shadowColor: MaterialStateProperty.all(Colors.pink.shade50),
-        shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
-        backgroundColor: MaterialStateProperty.all(Colors.white),
-        fixedSize: MaterialStateProperty.all(const Size(412, 60)),
-      ),
-                onPressed: () {},
-              ),
-            ),
-                  const SizedBox(
-                            height: 20,
-                          ),
-                          //Botão 
-            Center(child: Text('OR', style: TextStyleWidget.build(false,fontSize: 13, color: Colors.black),)),
-             
-               const SizedBox(
-                            height: 20,
-                          ),
-                          //Botão google
+                Container(
+                  width: MediaQuery.of(context).size.width - 100,
+                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                  height: 50,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 0.0),
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.white),
+                  child: ElevatedButton(
+                    child: Text("Next",
+                        style:
+                            TextStyleWidget.build(false, color: phoneNumber == "" ? Colors.black : Colors.white)),
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(2),
+                      overlayColor: MaterialStateProperty.all(Colors.black12),
+                      shadowColor:
+                          MaterialStateProperty.all(Colors.pink.shade50),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50))),
+                      backgroundColor: MaterialStateProperty.all( phoneNumber == "" ? Colors.white  :  ColorUtils.appColor ),
+                      fixedSize: MaterialStateProperty.all(const Size(412, 60)),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                //Botão
+                Center(
+                    child: Text(
+                  'OR',
+                  style: TextStyleWidget.build(false,
+                      fontSize: 13, color: Colors.black),
+                )),
 
-                          Padding(
-                            padding: const EdgeInsets.only(right: 28.0, top: 25.0),
-                            child: const TinderButton(
-                              texto: 'LOG IN WITH GOOGLE',
-                              imagem: AssetImage('assets/images/google.png'),
-                              cor: Colors.black87,
-                            ),
-                          ),
+                const SizedBox(
+                  height: 20,
+                ),
+                //Botão google
 
-                          //Espaçador
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 28.0, top: 10.0),
-                            child: TinderButton(
-                                texto: 'LOG IN WITH FACEBOOK',
-                                imagem: const AssetImage(
-                                    'assets/images/facebook.png'),
-                                cor: Colors.blue.shade500),
-                          ),
-                          //Espaçador
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          //Botão número
-                       
+                Padding(
+                  padding: const EdgeInsets.only(right: 28.0, top: 25.0),
+                  child: const TinderButton(
+                    texto: 'LOG IN WITH GOOGLE',
+                    imagem: AssetImage('assets/images/google.png'),
+                    cor: Colors.black87,
+                  ),
+                ),
+
+                //Espaçador
+                const SizedBox(
+                  height: 15,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 28.0, top: 10.0),
+                  child: TinderButton(
+                      texto: 'LOG IN WITH FACEBOOK',
+                      imagem: const AssetImage('assets/images/facebook.png'),
+                      cor: Colors.blue.shade500),
+                ),
+                //Espaçador
+                const SizedBox(
+                  height: 15,
+                ),
+                //Botão número
               ],
             ),
           ),

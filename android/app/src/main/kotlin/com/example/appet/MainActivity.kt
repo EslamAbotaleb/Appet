@@ -1,4 +1,4 @@
-package com.example.appet
+package com.appet.eg
 
 import io.flutter.embedding.android.FlutterActivity
 
