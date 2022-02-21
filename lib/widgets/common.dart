@@ -14,7 +14,17 @@ Logger logger = Logger(
     colors: false,
   ),
 );
+const kNormalText = TextStyle(
+  fontSize: 12,
+  color: Colors.white,
+);
 
+const kUnderlinedText = TextStyle(
+  fontSize: 12,
+  color: Colors.white,
+  decoration: TextDecoration.underline,
+  fontWeight: FontWeight.w500,
+);
 getLanguage(BuildContext context) {
   return Localizations?.localeOf(context).languageCode;
 }

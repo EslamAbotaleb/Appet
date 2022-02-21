@@ -1,5 +1,6 @@
 import 'package:appet/helpers/color_utils.dart';
 import 'package:appet/helpers/preferences_manager.dart';
+import 'package:appet/screens/authentication/authentication_screen.dart';
 import 'package:appet/screens/authentication/veritfcation/vertification_code_screen.dart';
 import 'package:appet/screens/home/home_screen.dart';
 import 'package:appet/widgets/common.dart';
@@ -35,7 +36,8 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
   
       body: SplashScreenView(
-      navigateRoute: VertificationPinCodeScreen(),
+      navigateRoute:AuthenticationScreen(),
+      //  VertificationPinCodeScreen(),
       //  _openScreen(),
       duration: 3500,
       imageSize: 130,
