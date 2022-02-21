@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "573456943218",
+    "firebase_url": "https://appet-f0a75-default-rtdb.firebaseio.com",
+    "project_id": "appet-f0a75",
+    "storage_bucket": "appet-f0a75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573456943218:android:d3493feef8745ddbf21aeb",
+        "android_client_info": {
+          "package_name": "com.appet.eg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573456943218-180govg0ck04bdpfriuk045j1ilbj699.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appet.eg",
+            "certificate_hash": "e32b1d1235c3cdc23aeb2149614c9cae59e60ae6"
+          }
+        },
+        {
+          "client_id": "573456943218-0fuqln6tpe8t2i22pv7nmlv45a1ajf9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXpTklhn2zSVy0wcdBUAypw2YHm7DYquQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573456943218-0fuqln6tpe8t2i22pv7nmlv45a1ajf9g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
