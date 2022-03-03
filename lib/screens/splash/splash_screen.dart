@@ -26,7 +26,9 @@ class _SplashScreenState extends State<SplashScreen> {
   _openScreen() async {
 
     Future.delayed(const Duration(seconds: 1), () {
-     pushScreen(context, VertificationPinCodeScreen());
+     pushScreen(context, AuthenticationScreen()
+    //  AuthenticationScreen()
+     );
     });
   }
   @override

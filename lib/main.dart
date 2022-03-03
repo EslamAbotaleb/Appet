@@ -1,5 +1,6 @@
 import 'package:appet/providers/lang/app_language.dart';
 import 'package:appet/screens/splash/splash_screen.dart';
+import 'package:appet/widgets/common.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -51,13 +52,25 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           locale: model.appLocal,
           debugShowCheckedModeBanner: false,
           title: '',
-          builder: (context, child) => Scaffold(
-            resizeToAvoidBottomInset: false,
-            body: child,
+          // builder: (context, child) => Scaffold(
+          //   resizeToAvoidBottomInset: false,
+          //   body: child,
+          // ),
+
+          builder: (ctx, child) => GestureDetector(
+            child: child,
+            onTap: () => clearFocus(ctx),
           ),
+
           home: SplashScreen(),
         );
       }),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    WidgetsBinding.instance?.removeObserver(this);
   }
 }
