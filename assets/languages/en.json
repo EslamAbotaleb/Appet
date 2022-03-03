@@ -9,8 +9,29 @@
     "resend": " RESEND",
     "verify": "VERIFY",
     "Clear": "Clear",
-    "AddPinCode": "Add Pin Code "
+    "AddPinCode": "Add Pin Code ",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "register": "register",
+    "completeprofile": "Complete your profile",
+    "clinic": "Clinic",
+    "pets": "Pets",
+    "adoption": "Adoption",
+    "account": "Account",
+    "addpets": "Add New Pet",
+    "newpet": "New Pet",
+    "name": "Name",
+    "tag": "Tag",
+    "type": "Type",
+    "color": "Color",
+    "breed": "breed",
+    "married": "Married",
+    "requestpassport": "Request passport",
+    "question": "Questions",
+    "submit": "Submit"
 
 
-      
+
+
+ 
 }
